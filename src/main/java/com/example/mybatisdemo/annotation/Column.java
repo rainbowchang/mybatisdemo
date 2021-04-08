@@ -54,4 +54,10 @@ public @interface Column {
     String name() default "";
 
     Class<? extends TypeHandler> typeHandler() default UnknownTypeHandler.class;
+
+    /**
+     * 日期的格式， 推荐两种yyyy-MM-dd HH:mm:ss 或 yyyy-MM-dd
+     * @return
+     */
+    String dateFormat() default "";
 }

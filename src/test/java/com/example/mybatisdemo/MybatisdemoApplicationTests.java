@@ -19,7 +19,7 @@ class MybatisdemoApplicationTests {
     }
 
     @Test
-    void test(){
+    void test() {
 //        User user = userService.Sel("2");
 //        System.out.println(user.toString());
 //        userService.del(2);
