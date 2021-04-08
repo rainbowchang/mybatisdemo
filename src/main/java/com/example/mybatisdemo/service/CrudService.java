@@ -2,7 +2,7 @@ package com.example.mybatisdemo.service;
 
 import com.example.mybatisdemo.mapper.CrudDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.util.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
@@ -38,7 +38,7 @@ public abstract class CrudService<Dao extends CrudDao<T>, T extends Entity<?>> {
      */
     public T get(String id){
 
-        if(!StringUtils.hasLength(id)){
+        if(StringUtils.isBlank(id)){
             return null;
         }
         Class<T> clazz = (Class<T>) ((ParameterizedType)getClass().getGenericSuperclass()).getActualTypeArguments()[1];
@@ -62,7 +62,7 @@ public abstract class CrudService<Dao extends CrudDao<T>, T extends Entity<?>> {
         if(t == null){
             return null;
         }
-        if(!StringUtils.hasLength(t.id)){
+        if(StringUtils.isBlank(t.id)){
             return null;
         }
         return dao.get(t);

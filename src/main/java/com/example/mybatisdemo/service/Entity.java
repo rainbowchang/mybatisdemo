@@ -2,6 +2,7 @@ package com.example.mybatisdemo.service;
 
 import com.example.mybatisdemo.annotation.Column;
 import com.example.mybatisdemo.annotation.Table;
+import com.example.utils.lang.DateUtils;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -24,7 +25,8 @@ import java.util.Date;
                 attrName = "createDate",
                 label = "创建时间",
                 isUpdate = false,
-                isQuery = false
+                isQuery = false,
+                dateFormat = "yyyy-MM-dd HH:mm:ss"
         ), @Column(
                 name = "update_by",
                 attrName = "updateBy",
@@ -35,7 +37,8 @@ import java.util.Date;
                 attrName = "updateDate",
                 label = "更新时间",
                 isUpdate = true,
-                isQuery = false
+                isQuery = false,
+                dateFormat = "yyyy-MM-dd HH:mm:ss"
         ), @Column(
                 name = "remarks",
                 attrName = "remarks",
@@ -70,7 +73,7 @@ public class Entity<T extends Entity<T>> implements Serializable {
 
     private SqlMap<T> sqlMap;
 
-    public Entity(){
+    public Entity() {
         sqlMap = new SqlMap<T>(this);
     }
 
@@ -156,8 +159,8 @@ public class Entity<T extends Entity<T>> implements Serializable {
                 ", corpCode='" + corpCode + '\'' +
                 ", status='" + status + '\'' +
                 ", remarks='" + remarks + '\'' +
-                ", updateDate='" + updateDate + '\'' +
-                ", createDate='" + createDate + '\'' +
+                ", updateDate='" + DateUtils.formatDateTime(updateDate) + '\'' +
+                ", createDate='" + DateUtils.formatDateTime(createDate) + '\'' +
                 ", createBy='" + createBy + '\'' +
                 ", updateBy='" + updateBy + '\'';
     }

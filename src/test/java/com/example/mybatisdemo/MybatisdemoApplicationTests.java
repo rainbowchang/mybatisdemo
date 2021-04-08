@@ -29,48 +29,48 @@ class MybatisdemoApplicationTests {
 //            System.out.println(userService.get("2"));
 //        }
 
-        {
-            User user = new User();
-            user.setId("1");
-            System.out.println(userService.get(user));
-        }
+//        {
+//            User user = new User();
+//            user.setId("1");
+//            System.out.println(userService.get(user));
+//        }
+//
+//        {
+//            User user = new User();
+//            user.setCorpCode("T");
+//            List<User> userList = userService.findList(user);
+//            userList.forEach(System.out::println);
+//        }
+
+//        {
+//            User user = new User();
+//            user.setUserName("zzsdfff");
+//            user.setPassWord("1fgr67");
+//            user.setRealName("zzsdfff");
+//            user.setCorpCode("DFG");
+//            long l = userService.insert(user);
+//            System.out.println("Insert " + l);
+//        }
 
         {
             User user = new User();
-            user.setCorpCode("T");
-            List<User> userList = userService.findList(user);
-            userList.forEach(System.out::println);
-        }
-
-        {
-            User user = new User();
-            user.setUserName("zzsdfff");
-            user.setPassWord("1fgr67");
-            user.setRealName("zzsdfff");
-            user.setCorpCode("DFG");
-            long l = userService.insert(user);
-            System.out.println("Insert " + l);
-        }
-
-        {
-            User user = new User();
-            user.setId("1377524724629827584");
+            user.setId("1379984292896907264");
             long l = userService.delete(user);
             System.out.println("delete " + l);
         }
 
-        {
-            User user = new User();
-            user.setId("3");
-            user.setPassWord("weiottuuuuweerer");
-            long l = userService.update(user);
-            System.out.println("update " + l);
-        }
-
-        {
-            User user = userService.Sel("1");
-            System.out.println(user);
-        }
+//        {
+//            User user = new User();
+//            user.setId("1379984292896907264");
+//            user.setPassWord("gtgrtheegnb");
+//            long l = userService.update(user);
+//            System.out.println("update " + l);
+//        }
+//
+//        {
+//            User user = userService.Sel("1");
+//            System.out.println(user);
+//        }
     }
 
 }

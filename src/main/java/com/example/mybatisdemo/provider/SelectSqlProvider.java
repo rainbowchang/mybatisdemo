@@ -2,6 +2,7 @@ package com.example.mybatisdemo.provider;
 
 import com.example.mybatisdemo.annotation.Column;
 import com.example.mybatisdemo.service.Entity;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.jdbc.SQL;
 
 import java.lang.reflect.Field;
@@ -27,6 +28,9 @@ public class SelectSqlProvider extends SQL implements SqlProvider {
     }
 
     public String findList(Entity<?> entity) {
+        if(StringUtils.isBlank(entity.getCorpCode())){
+
+        }
         createSelectColumn(entity.getSqlMap().getColumns())
                 .FROM(entity.getSqlMap().getTable().name())
                 .createWhereSeg(entity);
